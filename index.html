@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Expense Tracker Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>💰 Smart Expense Tracker Dashboard</h1>
+
+    <div class="topbar">
+        <button id="themeBtn">🌙 Dark Mode</button>
+    </div>
+
+    <div class="form">
+        <input type="text" id="title" placeholder="Expense Title">
+        <input type="number" id="amount" placeholder="Amount">
+        <select id="category">
+            <option>Food</option>
+            <option>Travel</option>
+            <option>Shopping</option>
+            <option>Bills</option>
+            <option>Others</option>
+        </select>
+        <button onclick="addExpense()">Add Expense</button>
+    </div>
+
+    <div class="controls">
+        <input type="text" id="search" placeholder="Search Expense">
+        <select id="filter">
+            <option value="All">All Categories</option>
+            <option value="Food">Food</option>
+            <option value="Travel">Travel</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Bills">Bills</option>
+            <option value="Others">Others</option>
+        </select>
+        <button onclick="exportCSV()">Export CSV</button>
+    </div>
+
+    <div class="stats">
+        <div class="card">
+            <h3>Total Expense</h3>
+            <p>₹<span id="total">0</span></p>
+        </div>
+        <div class="card">
+            <h3>Total Transactions</h3>
+            <p id="transactions">0</p>
+        </div>
+        <div class="card">
+            <h3>Highest Expense</h3>
+            <p id="highest">₹0</p>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="expenseChart"></canvas>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="expenseList"></tbody>
+    </table>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
